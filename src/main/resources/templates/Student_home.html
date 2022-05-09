@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <a th:href="@{'/'}">Home</a>
+  <a th:href="@{'/Student_exams'}">Exams</a>
+<div id="div1" align="center">
+			<h1>Student detailst</h1>
+			
+			<table border="1" cellpadding="10">
+				<thead>
+				<tr>
+				<th>Student ID</th>
+				<th>Student Name</th>
+				<th>Student Email</th>
+				<th>Student Course</th>
+				</tr>
+				</thead>
+				
+				<tbody>
+				<tr th:each="student : ${liststudent}">
+				<td th:text="${student.id}">Student ID</td>
+				<td th:text="${student.name}">Student Name</td>
+				<td th:text="${student.email}">student Email</td>
+				<td th:text="${student.course}">Student Course</td>
+					
+				</tbody>
+			</table>
+</div>
+</body>
+</html>
